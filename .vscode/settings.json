@@ -1,0 +1,5 @@
+{
+  // Ensure Copilot Chat reads this repo's .github/copilot-instructions.md
+  // so it can act as a course-aware tutor for students.
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true
+}
