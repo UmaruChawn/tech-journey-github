@@ -70,69 +70,114 @@
 
   <!-- The classes below set the gradient background and center the card. -->
   <body
-    class="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 flex justify-center items-start p-4"
+    x-data="{ darkMode: false }"
+    :class="darkMode ? 'bg-gray-900' : 'bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600'"
+    class="min-h-screen flex justify-center items-start p-4 transition-colors duration-300"
   >
-    <main class="bg-white w-full max-w-2xl my-12 p-10 rounded-2xl shadow-2xl">
+    <main :class="darkMode ? 'bg-gray-800 text-white' : 'bg-white'" class="w-full max-w-2xl my-12 p-10 rounded-3xl shadow-2xl animate-fadeIn transition-colors duration-300 border-4 border-gradient-to-r from-pink-400 to-purple-400">
+      
+      <!-- Dark Mode Toggle -->
+      <div class="flex justify-end mb-6">
+        <button @click="darkMode = !darkMode" class="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300" :class="darkMode ? 'bg-yellow-400 text-gray-900' : 'bg-gray-800 text-white'">
+          <i :class="darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
+          <span class="text-sm font-semibold">{{ darkMode ? 'Light' : 'Dark' }}</span>
+        </button>
+      </div>
+
       <!-- ▼▼▼ START EDITING HERE ▼▼▼ -->
 
-      <h1 class="text-4xl font-extrabold text-gray-900">
-        Hi, I'm Sheeta Lawkham <span class="inline-block">👋</span>
+      <h1 class="text-5xl font-black bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent animate-bounce2">
+        <i class="fa-solid fa-rocket"></i> Hi, I'm Sheeta Lawkham!
       </h1>
-      <p class="text-lg text-gray-500 mt-1">
-        A future developer learning Git, GitHub, and Copilot.
+      <p :class="darkMode ? 'text-gray-300' : 'text-gray-600'" class="text-lg mt-2 font-medium">
+        <i class="fa-solid fa-code"></i> A future developer & artist
       </p>
 
-      <h2 class="text-2xl font-semibold mt-8 pb-1 border-b-4 border-purple-400">
-        About Me
-      </h2>
-      <p class="mt-3 text-gray-700">
-        I am a student at Roosevelt Highschool, currently in my Junior year. I am of Thai descent, I am fluent in English and only know a few words in Thai.
-        I want to be a web designer and developer.
-      </p>
+      <div class="mt-8 p-6 rounded-2xl" :class="darkMode ? 'bg-gray-700' : 'bg-gradient-to-r from-pink-100 to-purple-100'">
+        <h2 class="text-2xl font-bold mb-4">
+          <i class="fa-solid fa-user"></i> About Me
+        </h2>
+        <p :class="darkMode ? 'text-gray-200' : 'text-gray-700'" class="leading-relaxed">
+          I am a student at Roosevelt Highschool, currently in my Junior year. I am of Thai descent, fluent in English, and passionate about web design and development. I love combining art with code to create beautiful experiences!
+        </p>
+      </div>
 
-      <h2 class="text-2xl font-semibold mt-8 pb-1 border-b-4 border-purple-400">
-        My interests
-      </h2>
-      <ul class="mt-3 space-y-1 text-gray-700 list-disc list-inside">
-        <li>Video games</li>
-        <li>Art</li>
-        <li>Technology</li>
-        <li>Music</li>
-        <li>Anime</li>
-        <li>Web design and development</li>
-        <li>Singing</li>
-      </ul>
+      <div class="mt-8">
+        <h2 class="text-2xl font-bold mb-4">
+          <i class="fa-solid fa-star"></i> My Interests
+        </h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105" :class="darkMode ? 'bg-gray-700 hover:bg-blue-900' : 'bg-blue-50 hover:bg-blue-100'">
+            <i class="fa-solid fa-gamepad text-2xl text-blue-500"></i>
+            <p class="mt-2 font-semibold">Video Games</p>
+          </div>
+          <div class="p-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105" :class="darkMode ? 'bg-gray-700 hover:bg-purple-900' : 'bg-purple-50 hover:bg-purple-100'">
+            <i class="fa-solid fa-palette text-2xl text-purple-500"></i>
+            <p class="mt-2 font-semibold">Art & Design</p>
+          </div>
+          <div class="p-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105" :class="darkMode ? 'bg-gray-700 hover:bg-cyan-900' : 'bg-cyan-50 hover:bg-cyan-100'">
+            <i class="fa-solid fa-microchip text-2xl text-cyan-500"></i>
+            <p class="mt-2 font-semibold">Technology</p>
+          </div>
+          <div class="p-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105" :class="darkMode ? 'bg-gray-700 hover:bg-pink-900' : 'bg-pink-50 hover:bg-pink-100'">
+            <i class="fa-solid fa-music text-2xl text-pink-500"></i>
+            <p class="mt-2 font-semibold">Music & Singing</p>
+          </div>
+          <div class="p-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105" :class="darkMode ? 'bg-gray-700 hover:bg-yellow-900' : 'bg-yellow-50 hover:bg-yellow-100'">
+            <i class="fa-solid fa-film text-2xl text-yellow-500"></i>
+            <p class="mt-2 font-semibold">Anime</p>
+          </div>
+          <div class="p-4 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105" :class="darkMode ? 'bg-gray-700 hover:bg-green-900' : 'bg-green-50 hover:bg-green-100'">
+            <i class="fa-solid fa-globe text-2xl text-green-500"></i>
+            <p class="mt-2 font-semibold">Web Design</p>
+          </div>
+        </div>
+      </div>
 
-      <h2 class="text-2xl font-semibold mt-8 pb-1 border-b-4 border-purple-400">
-        What I'm Learning
-      </h2>
-      <p class="mt-3 text-gray-700">
-        Right now I'm learning how developers build and share software with
-        GitHub. This page is proof — I wrote it and published it myself!
-      </p>
+      <div class="mt-8 p-6 rounded-2xl" :class="darkMode ? 'bg-gray-700' : 'bg-gradient-to-r from-indigo-100 to-blue-100'">
+        <h2 class="text-2xl font-bold mb-4">
+          <i class="fa-solid fa-graduation-cap"></i> What I'm Learning
+        </h2>
+        <p :class="darkMode ? 'text-gray-200' : 'text-gray-700'" class="leading-relaxed">
+          Right now I'm mastering the developer workflow with Git, GitHub, and AI-powered coding! This page is proof I can build and deploy real projects. 🚀
+        </p>
+      </div>
 
       <!--
         A little interactive button, powered by Alpine.js.
         x-data gives this box a tiny bit of "memory" (waves),
         @click runs code when clicked, and x-text shows a value.
       -->
-      <div x-data="{ waves: 0 }" class="mt-8">
+      <div x-data="{ waves: 0, likes: 0 }" class="mt-8 flex flex-col gap-4">
         <button
           @click="waves++"
-          class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-5 py-2 rounded-lg shadow transition"
+          class="w-full flex items-center justify-center gap-2 text-white font-bold py-3 px-5 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
         >
-          <i class="fa-solid fa-hand"></i> Wave at me
+          <i class="fa-solid fa-hand fa-beat"></i> Wave at me!
         </button>
-        <span x-show="waves > 0" class="ml-3 text-gray-600">
-          Thanks for the <span x-text="waves"></span> wave(s)! 👋
-        </span>
+        <div x-show="waves > 0" class="text-center font-semibold">
+          <p :class="darkMode ? 'text-gray-300' : 'text-gray-600'">
+            Thanks for the <span class="text-pink-500 font-bold" x-text="waves"></span> wave(s)! 👋
+          </p>
+        </div>
+
+        <button
+          @click="likes++"
+          class="w-full flex items-center justify-center gap-2 text-white font-bold py-3 px-5 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600"
+        >
+          <i class="fa-solid fa-heart fa-beat" style="color: white;"></i> Love this!
+        </button>
+        <div x-show="likes > 0" class="text-center font-semibold">
+          <p :class="darkMode ? 'text-gray-300' : 'text-gray-600'">
+            <span class="text-red-500 font-bold" x-text="likes"></span> people love this! ❤️
+          </p>
+        </div>
       </div>
 
       <!-- ▲▲▲ STOP EDITING HERE (or keep going — it's your page!) ▲▲▲ -->
 
-      <footer class="mt-10 text-center text-sm text-gray-400">
-        Built with <i class="fa-solid fa-heart text-purple-400"></i> during the
-        Tech Journey course.
+      <footer class="mt-10 text-center text-sm" :class="darkMode ? 'text-gray-400' : 'text-gray-500'">
+        Built with <i class="fa-solid fa-heart text-red-500"></i> using Git, GitHub & Copilot
       </footer>
     </main>
   </body>
