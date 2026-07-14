@@ -1,12 +1,12 @@
 ## About Me
 
-**Name:** Sheeta Lawkham
+**Name:** [Sheeta Lawkham]
 
 **Why I joined Tech Journey:**
-[Write 1-2 sentences]
+[I wanted to explore a little in the world of tech because it was somehting that interested me at a young age.]
 
 **Something I am interested in:**
-[A hobby, subject, game, sport — anything]
+[Digital art, Linux, OSINT, Web development, Piano and Building and breaking things]
 
 **One thing I hope to learn:**
-[What do you want to be able to do after this program?]
+[I hope to use my skills and hobbies for a future job or to help me land a career]
