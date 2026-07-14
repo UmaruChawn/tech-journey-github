@@ -54,6 +54,14 @@
         theme: {
           extend: {
             fontFamily: { sans: ["Poppins", "ui-sans-serif", "system-ui"] },
+            animation: {
+              fadeIn: "fadeIn 0.8s ease-in",
+              bounce2: "bounce2 2s infinite",
+            },
+            keyframes: {
+              fadeIn: { "0%": { opacity: "0", transform: "translateY(10px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
+              bounce2: { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-5px)" } },
+            },
           },
         },
       };
